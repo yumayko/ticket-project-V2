@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('flights', function (Blueprint $table) {
-            $table->id();
-            $table->string('flight_number');
-            $table->foreignId('airlines_id')->references('id')->on('airlines')->onDelete('cascade');
-            $table->softDeletes();
-            $table->timestamps();
+        Schema::table('promo_codes', function (Blueprint $table) {
+            //
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('flights');
+        Schema::table('promo_codes', function (Blueprint $table) {
+            //
+        });
     }
 };
